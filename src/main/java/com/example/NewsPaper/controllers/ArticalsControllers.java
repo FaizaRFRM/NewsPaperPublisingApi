@@ -5,6 +5,7 @@ import com.example.NewsPaper.Services.ArticaServices;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.text.ParseException;
 import java.util.Date;
 import java.util.List;
 
@@ -34,6 +35,21 @@ public class ArticalsControllers {
         List<Articals> getByArticalIdList = articaServices.getByArticalId(articalId);
         return getByArticalIdList;
     }
+    @RequestMapping(value = "deleteArticleById", method = RequestMethod.POST)
+    public String deleteArticleById(Integer id) {
+        try {
+            articaServices.deleteArticleById(id);
+            return "deleted Successfully";
+
+        } catch (Exception e) {
+            return "failed";
+        }
+    }
+        @RequestMapping(value ="UpdateArticals")
+        public void UpdateArticals() throws ParseException {
+            articaServices.UpdateArticals();
+
+        }
 
 
 }

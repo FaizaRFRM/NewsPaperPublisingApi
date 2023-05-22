@@ -13,12 +13,12 @@ public class ArticaServices {
     @Autowired
     ArticalRepositories articalRepositories;
     public void AddArtical(String title,String content ,String author,Date publishDate) {
-        Articals articalsInfo = new Articals();
-        articalsInfo.setAuthor(title);
-        articalsInfo.setContent(content);
-        articalsInfo.setTitle(author);
-        articalsInfo.setPublishDate(publishDate);
-        articalRepositories.save(articalsInfo);
+        Articals articals = new Articals();
+        articals.setAuthor(title);
+        articals.setContent(content);
+        articals.setTitle(author);
+        articals.setPublishDate(publishDate);
+        articalRepositories.save(articals);
     }
     public List<Articals> getAllArticals() {
         return articalRepositories.getAllArticals();
@@ -26,6 +26,20 @@ public class ArticaServices {
     public List<Articals> getByArticalId(Integer articalId){
         List<Articals> articalsList = articalRepositories.getByArticalId(articalId);
         return articalsList;
+    }
+    public void deleteArticleById(Integer id) {
+        Articals articals = articalRepositories.findById(id).get();
+        articals.setIsActive(Boolean.valueOf("false"));
+        articalRepositories.save(articals);
+    }
+    public void UpdateArticals() {
+        Articals articals = new Articals();
+        articals.setId(2);
+        articals.setAuthor("Jane Smith");
+        articals.setContent("The weather will be sunny with occasional rainfall and thunderstorms");
+        articals.setTitle("Weather Forecast for Next Week");
+        articals.setPublishDate(2023-05-22);
+        articalRepositories.save(articals);
     }
 
 }

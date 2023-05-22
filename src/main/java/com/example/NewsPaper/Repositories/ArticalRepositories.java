@@ -13,8 +13,9 @@ import java.util.List;
 public interface ArticalRepositories extends JpaRepository<Articals,Integer> {
         @Query("SELECT a from Articals a")
         List<Articals> getAllArticals();
-    @Query(value = "SELECT c from Course c WHERE c.student.id = :id ")
+    @Query(value = "SELECT s from Articals s WHERE s.id = :id ")
     List<Articals> getByArticalId(@Param("id") Integer id);
-
+    @Query(value = "Update Article s set s.IsActive = false")
+    List<Articals> deleteArticleById();
 }
 
