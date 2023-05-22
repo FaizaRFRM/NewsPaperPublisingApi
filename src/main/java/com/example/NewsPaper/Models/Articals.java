@@ -20,7 +20,7 @@ public class Articals {
     String title;
     String content;
     String author;
-    Date publishDate;
+    String publishDate;
     Boolean isActive;
 
 

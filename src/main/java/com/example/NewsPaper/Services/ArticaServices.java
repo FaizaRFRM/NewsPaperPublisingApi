@@ -5,6 +5,7 @@ import com.example.NewsPaper.Repositories.ArticalRepositories;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 
@@ -12,7 +13,7 @@ import java.util.List;
 public class ArticaServices {
     @Autowired
     ArticalRepositories articalRepositories;
-    public void AddArtical(String title,String content ,String author,Date publishDate) {
+    public void AddArtical(String title,String content ,String author,String publishDate) {
         Articals articals = new Articals();
         articals.setAuthor(title);
         articals.setContent(content);
@@ -27,6 +28,14 @@ public class ArticaServices {
         List<Articals> articalsList = articalRepositories.getByArticalId(articalId);
         return articalsList;
     }
+    public List<Articals> getAllArticalsByIsActive(){
+
+        return articalRepositories.getAllArticalsByIsActive();
+    }
+    public List<Articals> getAllArticalsByInActive(){
+
+        return articalRepositories.getAllArticalsByInActive();
+    }
     public void deleteArticleById(Integer id) {
         Articals articals = articalRepositories.findById(id).get();
         articals.setIsActive(Boolean.valueOf("false"));
@@ -38,7 +47,7 @@ public class ArticaServices {
         articals.setAuthor("Jane Smith");
         articals.setContent("The weather will be sunny with occasional rainfall and thunderstorms");
         articals.setTitle("Weather Forecast for Next Week");
-        articals.setPublishDate(2023-05-22);
+        articals.setPublishDate ("2023-05-22");
         articalRepositories.save(articals);
     }
 

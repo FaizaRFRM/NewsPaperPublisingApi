@@ -55,13 +55,18 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-mail</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>net.sf.jasperreports</groupId>
+			<artifactId>jasperreports</artifactId>
+			<version>6.20.1</version>
+		</dependency>
 	</dependencies>
 
-	<dependency>
-		<groupId>net.sf.jasperreports</groupId>
-		<artifactId>jasperreports</artifactId>
-		<version>6.20.1</version>
-	</dependency>
+
 	<build>
 		<plugins>
 			<plugin>

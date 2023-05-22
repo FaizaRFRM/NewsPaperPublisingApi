@@ -11,11 +11,15 @@ import java.util.List;
 
 @Repository
 public interface ArticalRepositories extends JpaRepository<Articals,Integer> {
-        @Query("SELECT a from Articals a")
-        List<Articals> getAllArticals();
+    @Query("SELECT a from Articals a")
+    List<Articals> getAllArticals();
     @Query(value = "SELECT s from Articals s WHERE s.id = :id ")
     List<Articals> getByArticalId(@Param("id") Integer id);
-    @Query(value = "Update Article s set s.IsActive = false")
+    @Query(value = "Update Articles s set s.IsActive = false")
     List<Articals> deleteArticleById();
+    @Query(value = "SELECT s from Articles s where s.IsActive = true")
+    List<Articals> getAllArticalsByIsActive();
+    @Query(value = "SELECT s from Articles s where s.IsActive = false")
+    List<Articals> getAllArticalsByInActive();
 }
 
