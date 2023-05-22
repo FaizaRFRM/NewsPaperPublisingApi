@@ -1,20 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Created with Jaspersoft Studio version 6.20.1.final using JasperReports Library version 6.20.1-7584acb244139816654f64e2fd57a00d3e31921e  -->
-<jasperReport>
-    <field name="FIRSTNAME" class="java.lang.String">
-        <property name="com.jaspersoft.studio.field.name" value="creted"/>
-        <property name="com.jaspersoft.studio.field.label" value="updated"/>
-        <property name="com.jaspersoft.studio.field.tree.path" value="deleted"/>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="NewsPaperPublishingHouseAPI" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="d823293b-cdca-4637-b286-ed24df58dabc">
+    <field name="created" class="java.lang.String">
     </field>
-    <field name="LASTNAME" class="java.lang.String">
-        <property name="com.jaspersoft.studio.field.name" value="creted"/>
-        <property name="com.jaspersoft.studio.field.label" value="updated"/>
-        <property name="com.jaspersoft.studio.field.tree.path" value="deleted"/>
+    <field name="updated" class="java.lang.String">
     </field>
-    <field name="STREET" class="java.lang.String">
-        <property name="com.jaspersoft.studio.field.name" value="STREET"/>
-        <property name="com.jaspersoft.studio.field.label" value="STREET"/>
-        <property name="com.jaspersoft.studio.field.tree.path" value="ADDRESS"/>
+    <field name="deleted" class="java.lang.String">
     </field>
     <background>
         <band/>
